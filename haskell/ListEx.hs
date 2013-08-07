@@ -8,7 +8,7 @@ returnList :: a -> [a]
 returnList a = [a]
 
 bindList :: [a] -> (a -> [b]) -> [b]
-bindList l f = foldr (\x -> (++) (f x)) [] l
+bindList l f = foldr ( (++) . f )) [] l
 
 mapList :: (a -> b) -> [a] -> [b]
 mapList f l = foldr (\x acc -> (f x):acc) [] l
